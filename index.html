@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终幻想XIV冒险小队计算器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>最终幻想XIV冒险小队计算器</h1>
+        
+        <div class="section">
+            <h2>1. 小队队员信息</h2>
+            <div class="heroes-container">
+                <!-- 将生成8个队员输入行 -->
+            </div>
+            <button id="addHero" class="btn">添加队员</button>
+        </div>
+
+        <div class="section">
+            <h2>2. 任务信息</h2>
+            <div class="mission-container">
+                <div class="input-group">
+                    <label>体力</label>
+                    <input type="number" id="mission-0" min="0" value="350">
+                </div>
+                <div class="input-group">
+                    <label>精神</label>
+                    <input type="number" id="mission-1" min="0" value="300">
+                </div>
+                <div class="input-group">
+                    <label>智力</label>
+                    <input type="number" id="mission-2" min="0" value="300">
+                </div>
+                <button id="addMission" class="btn">设置新任务</button>
+            </div>
+            <div id="missions-list" class="missions-list">
+                <!-- 已添加的任务列表 -->
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. 训练获得的点数</h2>
+            <div class="training-container">
+                <div class="input-group">
+                    <label>体力</label>
+                    <input type="number" id="training-0" min="0" value="120">
+                </div>
+                <div class="input-group">
+                    <label>精神</label>
+                    <input type="number" id="training-1" min="0" value="160">
+                </div>
+                <div class="input-group">
+                    <label>智力</label>
+                    <input type="number" id="training-2" min="0" value="120">
+                </div>
+                <div class="input-group total">
+                    <label>总和:</label>
+                    <span id="training-total">400</span>
+                    <span class="hint">(应为200/280/400)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. 其他设置</h2>
+            <div class="settings-container">
+                <div class="input-group">
+                    <label>展示结果数量</label>
+                    <input type="number" id="result-count" min="0" value="3">
+                    <span class="hint">(0表示显示所有)</span>
+                </div>
+                <div class="input-group">
+                    <label>必定使用的队员</label>
+                    <div id="must-use-container">
+                        <!-- 动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="calculate" class="btn primary">计算</button>
+
+        <div class="section results">
+            <h2>结果</h2>
+            <div id="results-container">
+                <pre id="results"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="计算器.js"></script>
+</body>
+</html> 
