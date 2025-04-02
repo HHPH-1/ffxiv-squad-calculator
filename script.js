@@ -178,21 +178,20 @@ document.addEventListener('DOMContentLoaded', function() {
         setNewMission();
     });
 
-    // 为任务属性输入框添加自动添加任务的功能
+    // 确认任务按钮事件
+    document.getElementById('confirmMission').addEventListener('click', function() {
+        // 确保所有任务输入框都有值
+        if (missionInputs.every(inp => inp.value && inp.value.trim() !== '')) {
+            addCurrentMission();
+        }
+    });
+
+    // 为任务属性输入框添加输入事件监听
     const missionInputs = [
         document.getElementById('mission-0'),
         document.getElementById('mission-1'),
         document.getElementById('mission-2')
     ];
-
-    missionInputs.forEach(input => {
-        input.addEventListener('change', function() {
-            // 确保所有任务输入框都有值
-            if (missionInputs.every(inp => inp.value && inp.value.trim() !== '')) {
-                addCurrentMission();
-            }
-        });
-    });
 
     // 添加当前任务到列表
     function addCurrentMission() {
