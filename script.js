@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const missionItem = document.createElement('div');
             missionItem.className = 'mission-item';
             missionItem.innerHTML = `
-                <span>任务 ${index + 1}: [体力: ${mission[0]}, 精神: ${mission[1]}, 智力: ${mission[2]}]</span>
+                <span>任务 ${index + 1}: [体能: ${mission[0]}, 心智: ${mission[1]}, 战术: ${mission[2]}]</span>
                 <button class="remove-mission" data-index="${index}">删除</button>
             `;
             missionsList.appendChild(missionItem);
